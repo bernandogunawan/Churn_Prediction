@@ -6,7 +6,6 @@ It’s designed for **bank staff, analysts, or data scientists** to quickly test
 
 Try it here:
 https://churnprediction-bernando.streamlit.app/
----
 
 ## 🚀 Features
 
