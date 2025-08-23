@@ -38,8 +38,13 @@ if "current_step" not in st.session_state:
 # ---------- Sidebar as Vertical Steps ----------
 st.sidebar.title("📌 Steps")
 steps = ["Home", "Insert Data", "Review", "Predict"]
-st.session_state.current_step = st.sidebar.radio("Go to step:", steps, index=steps.index(st.session_state.current_step))
-
+current_step = st.sidebar.radio(
+    "Go to step:", steps, index=steps.index(st.session_state.current_step)
+)
+if current_step != st.session_state.current_step:
+    st.session_state.current_step = current_step
+    st.rerun()
+    
 # ---------- STEP: Home ----------
 if st.session_state.current_step == "Home":
     st.title("🏦 Bank Service Churn Predictor")
