@@ -42,7 +42,6 @@ st.session_state.current_step = st.sidebar.radio("Go to step:", steps, index=ste
 
 # ---------- STEP: Home ----------
 if st.session_state.current_step == "Home":
-    st.experimental_rerun()
     st.title("🏦 Bank Service Churn Predictor")
     st.subheader("Predict whether a customer will churn or stay")
     st.markdown("""
@@ -74,7 +73,6 @@ if st.session_state.current_step == "Home":
 
 # ---------- STEP: Insert Data ----------
 elif st.session_state.current_step == "Insert Data":
-    st.experimental_rerun()
     st.header("1️⃣ Insert Customer Data")
     insert_type = st.radio("Insert Type:", ["Manual Input", "Batch Upload"])
 
@@ -155,7 +153,6 @@ elif st.session_state.current_step == "Insert Data":
 
 # ---------- STEP: Review ----------
 elif st.session_state.current_step == "Review":
-    st.experimental_rerun()
     st.header("2️⃣ Review Data")
     if st.session_state.input_data.empty:
         st.info("No data to review. Go to 'Insert Data' step to add customers.")
@@ -167,7 +164,6 @@ elif st.session_state.current_step == "Review":
 
 # ---------- STEP: Predict ----------
 elif st.session_state.current_step == "Predict":
-    st.experimental_rerun()
     st.header("3️⃣ Predict & Visualize")
     if st.session_state.input_data.empty:
         st.info("No data to predict. Please insert data first.")
@@ -213,4 +209,5 @@ elif st.session_state.current_step == "Predict":
 
             except Exception as e:
                 st.error(f"Prediction failed: {e}")
+
 
